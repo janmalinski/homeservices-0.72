@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "411562195295",
+    "project_id": "homeservices-4132c",
+    "storage_bucket": "homeservices-4132c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411562195295:android:99a3eb3c251ea66433deea",
+        "android_client_info": {
+          "package_name": "com.homeservices"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411562195295-8kcgv3qp0dbbp8uos8gnrrfo5dd89otd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACnDvlw_Fm3uDOj6sLRUCsy3ikTjf09sg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411562195295-8kcgv3qp0dbbp8uos8gnrrfo5dd89otd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411562195295-2oacd32vfr6emet3bfdmr71m80kjhptl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.homeservices"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
