@@ -51,5 +51,22 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+		<key>UIAppFonts</key>
+		<array>
+			<string>Inter-Regular.ttf</string>
+			<string>Inter-Medium.ttf</string>
+			<string>Inter-SemiBold.ttf</string>
+			<string>Montserrat-Bold.ttf</string>
+			<string>Montserrat-SemiBold.ttf</string>
+			<!-- <string>MaterialIcons.ttf</string>
+			<string>Ionicons.ttf</string>
+			<string>FontAwesome5_Brands.ttf</string>
+			<string>FontAwesome5_Regular.ttf</string>
+			<string>FontAwesome5_Solid.ttf</string> -->
+		</array>
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>The App needs to access to your location, when app is in use.It is required to post ads.</string>
+		<key>NSPhotoLibraryUsageDescription</key>
+		<string>The App would like to have access to the Photo Library to change profile picture.</string>
 </dict>
 </plist>
