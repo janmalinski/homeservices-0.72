@@ -1,3 +1,5 @@
+$RNMapboxMapsImpl = 'mapbox'
+
 # Resolve react_native_pods.rb with node to allow for hoisting
 require Pod::Executable.execute_command('node', ['-p',
   'require.resolve(
@@ -6,7 +8,7 @@ require Pod::Executable.execute_command('node', ['-p',
   )', __dir__]).strip
 
 platform :ios, min_ios_version_supported
-prepare_react_native_project!
+prepare_react_native_project! 
 
 # If you are using a `react-native-flipper` your iOS build will fail when `NO_FLIPPER=1` is set.
 # because `react-native-flipper` depends on (FlipperKit,...) that will be excluded
@@ -27,13 +29,14 @@ end
 
 target 'homeservicesprovider' do
   config = use_native_modules!
-  # FIREBASE:
-  use_frameworks! :linkage => :static
-  $RNFirebaseAsStaticFramework = true
+
 
   # Flags change depending on the env values.
   flags = get_default_flags()
 
+  use_frameworks! :linkage => :static
+  # FIREBASE:
+  $RNFirebaseAsStaticFramework = true
   use_react_native!(
     :path => config[:reactNativePath],
     # Hermes is now enabled by default. Disable by setting this flag to false.
@@ -54,7 +57,12 @@ target 'homeservicesprovider' do
     # Pods for testing
   end
 
+  pre_install do |installer|
+    $RNMapboxMaps.pre_install(installer)
+  end
+
   post_install do |installer|
+    $RNMapboxMaps.post_install(installer)
     # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
     react_native_post_install(
       installer,
@@ -64,3 +72,8 @@ target 'homeservicesprovider' do
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
 end
+
+
+
+
+
