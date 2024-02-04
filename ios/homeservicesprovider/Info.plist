@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>homeservicesprovider</string>
+	<string>Home Services Provider</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -17,14 +17,14 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(MARKETING_VERSION)</string>
+	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSAppTransportSecurity</key>
+	<!-- <key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
@@ -34,11 +34,33 @@
 				<true/>
 			</dict>
 		</dict>
-	</dict>
+	</dict> -->
+	<key>NSAllowsArbitraryLoads</key> 
+	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>The App needs to access to your location, when app is in use.It is required to post ads.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>The App would like to have access to the Photo Library to change profile picture.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Inter-Regular.ttf</string>
+		<string>Inter-Medium.ttf</string>
+		<string>Inter-SemiBold.ttf</string>
+		<string>Montserrat-Bold.ttf</string>
+		<string>Montserrat-SemiBold.ttf</string>
+		<string>MaterialIcons.ttf</string>
+		<string>Ionicons.ttf</string>
+		<string>FontAwesome5_Brands.ttf</string>
+		<string>FontAwesome5_Regular.ttf</string>
+		<string>FontAwesome5_Solid.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>BootSplash.storyboard</string>
+	<string>BootSplash</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -51,22 +73,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-		<key>UIAppFonts</key>
-		<array>
-			<string>Inter-Regular.ttf</string>
-			<string>Inter-Medium.ttf</string>
-			<string>Inter-SemiBold.ttf</string>
-			<string>Montserrat-Bold.ttf</string>
-			<string>Montserrat-SemiBold.ttf</string>
-			<!-- <string>MaterialIcons.ttf</string>
-			<string>Ionicons.ttf</string>
-			<string>FontAwesome5_Brands.ttf</string>
-			<string>FontAwesome5_Regular.ttf</string>
-			<string>FontAwesome5_Solid.ttf</string> -->
-		</array>
-		<key>NSLocationWhenInUseUsageDescription</key>
-		<string>The App needs to access to your location, when app is in use.It is required to post ads.</string>
-		<key>NSPhotoLibraryUsageDescription</key>
-		<string>The App would like to have access to the Photo Library to change profile picture.</string>
 </dict>
 </plist>

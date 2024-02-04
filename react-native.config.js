@@ -8,12 +8,17 @@ module.exports = {
     'react-native-flipper': {
       platforms: {
         ios: null,
-      }
+      },
     },
     'redux-flipper': {
       platforms: {
         ios: null,
-      }
-    }
+      },
+    },
+    'react-native-vector-icons': {
+      platforms: {
+        ios: null,
+      },
+    },
   },
 };
