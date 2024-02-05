@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { ColorSchemeName, StatusBar, useColorScheme } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
@@ -11,7 +11,9 @@ import { get, save } from './utils/StorageMMKV';
 import { ThemeContext } from '@src/context/ThemeContext';
 
 const App = () => {
-  const [theme, setTheme] = useState<ColorSchemeName | null>(null);
+  
+  const [theme, setTheme] = useState<ColorSchemeName | null>(useContext<any>(ThemeContext)?.theme);
+
   const defaultTheme = useColorScheme();
 
   const setAppTheme = useCallback(async() => {
@@ -20,17 +22,16 @@ const App = () => {
       save('Theme', defaultTheme);
       save('IsDefault', true);
       save('IS_FIRST', true);
-      // setTheme(defaultTheme)
+      setTheme(defaultTheme)
+    } else {
+      const themeFromManageScreen = await get('Theme');
+      setTheme(themeFromManageScreen)
     }
   }, []);
 
   useEffect(() => {
-    setTheme(defaultTheme)
-  }, [defaultTheme]);
-
-  useEffect(() => {
     setAppTheme();
-  }, [setAppTheme]);
+  }, []);
 
   return (
     <ThemeContext.Provider value={{theme, setTheme}}>

@@ -11,7 +11,7 @@ export const saveString = (key: string, value: any) => {
     }
   };
   
-  export const save = async (key: string, value: any) =>
+  export const save = (key: string, value: any) =>
     saveString(key, JSON.stringify(value));
   
   export const get = (key: string) => {

@@ -8,7 +8,6 @@ import {
   View,
   ColorSchemeName
 } from 'react-native';
-import RadioButtonRN from 'radio-buttons-react-native';
 
 import Colors from '@src/components/designSystem/colors';
 import { get, save } from '@src/utils/StorageMMKV';
@@ -19,8 +18,6 @@ type TTheme = 'dark' | 'light' | 'default';
 
 const ManageThemeScreen = () => {
 
-  console.log("TEST")
-
   const { theme, setTheme } = useContext<any>(ThemeContext);
 
     const [initialValue, setInitialValue] = useState(0);
@@ -28,14 +25,13 @@ const ManageThemeScreen = () => {
     const defaultTheme = useColorScheme();
 
     const getAppTheme = useCallback(async () => {
-
       const themeColor = await get('Theme');
       const isDefault = await get('IsDefault');
       isDefault ? themeOperations('default') : themeOperations(themeColor);
     }, []);
   
     const setThemeColor = useCallback((themeColor: ColorSchemeName, isDefault: boolean) => {
-      save('Theme', theme);
+      save('Theme', themeColor);
       save('IsDefault', isDefault);
       setTheme(themeColor)
     }, []);

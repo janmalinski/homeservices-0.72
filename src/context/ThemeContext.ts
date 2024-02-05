@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import { ColorSchemeName } from "react-native";
 
 type TTheme = {
@@ -7,3 +7,6 @@ type TTheme = {
 } | null;
 
 export const ThemeContext = createContext<TTheme>(null);
+
+
+
