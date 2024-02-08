@@ -18,10 +18,8 @@ export interface IAuthState {
   verifyRegistrationCodePending: boolean;
   registered: boolean;
   loginError: string | null;
-  loginStatusChanged: boolean;
   logoutError: string | null;
   logoutPending: boolean;
-  // logoutSuccess: boolean;
   authTokenExpiredError: string | null;
   authTokenExpiredPending: boolean;
   authTokenExpired: boolean;
@@ -36,10 +34,8 @@ const initialState: IAuthState = {
   verifyRegistrationCodePending: false,
   registered: false,
   loginError: null,
-  loginStatusChanged: false,
   logoutError: null,
   logoutPending: false,
-  // logoutSuccess: false,
   authTokenExpiredError: null,
   authTokenExpiredPending: false,
   authTokenExpired: false,
@@ -194,9 +190,6 @@ const authStore = createSlice({
     });
     builder.addCase(loginThunk.fulfilled, state => {
       state.loginError = null;
-      // state.logoutSuccess = false;
-      state.loginStatusChanged = !state.loginStatusChanged;
-
       state.authenticated = true;
     });
 
@@ -210,8 +203,6 @@ const authStore = createSlice({
     builder.addCase(logoutThunk.fulfilled, state => {
       state.logoutPending = false;
       state.logoutError = null;
-      // state.logoutSuccess = true;
-      state.loginStatusChanged = !state.loginStatusChanged;
       state.authenticated = false;
     });
 
