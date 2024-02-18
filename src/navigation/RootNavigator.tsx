@@ -5,9 +5,8 @@ import {
   NavigatorScreenParams,
 } from '@react-navigation/native';
 import {
-  createStackNavigator,
-  StackNavigationOptions,
-} from '@react-navigation/stack';
+  createNativeStackNavigator,
+} from '@react-navigation/native-stack';
 import RNBootSplash from 'react-native-bootsplash';
 import { t } from 'i18next';
 
@@ -103,9 +102,9 @@ export type TRootNavigatorParams = {
 
 export type TNavParams = TRootNavigatorParams & TBottomTabsNavigatorParams;
 
-const Root = createStackNavigator<TRootNavigatorParams>();
+const Root = createNativeStackNavigator<TRootNavigatorParams>();
 
-export const dialogScreenOptions: StackNavigationOptions = {
+export const dialogScreenOptions = {
   ...defaultHeaderOptions,
   headerShown: false,
   presentation: 'transparentModal',
