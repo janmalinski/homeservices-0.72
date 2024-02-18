@@ -13,7 +13,7 @@ interface IToastState {
 
 type TShowToastPayload = Omit<IToastState, 'variant'>;
 
-const DEFAULT_AUTOHIDE_TIMOUT = 3000;
+const DEFAULT_AUTOHIDE_TIMEOUT = 3000;
 
 const initialState: IToastState = {
   message: null,
@@ -34,7 +34,7 @@ const toastStore = createSlice({
         ...state,
         variant: 'success',
         ...action.payload,
-        autoHideTimeout: DEFAULT_AUTOHIDE_TIMOUT,
+        autoHideTimeout: DEFAULT_AUTOHIDE_TIMEOUT,
       };
     },
     showWarningToastAction: (
